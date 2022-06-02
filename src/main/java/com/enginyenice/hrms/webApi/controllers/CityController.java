@@ -14,7 +14,6 @@ public class CityController {
     private final CityService cityService;
 
 
-    @Autowired
     public CityController(CityService cityService) {
         this.cityService = cityService;
     }

@@ -14,8 +14,7 @@ import javax.validation.Valid;
 public class JobPositionController {
 
 	private final JobPositionService jobPositionService;
-	
-	@Autowired
+
 	public JobPositionController(JobPositionService jobPositionService) {
 		this.jobPositionService = jobPositionService;
 	}

@@ -23,7 +23,7 @@ public class JobPositionManager implements JobPositionService {
 	private final JobPositionRepository jobPositionRepository;
 	private final JobPositionRules jobPositionRules;
 	private ModelMapper modelMapper;
-	@Autowired
+
 	public JobPositionManager(JobPositionRepository jobPositionRepository,
 							  JobPositionRules jobPositionRules,
 							  ModelMapper modelMapper) {

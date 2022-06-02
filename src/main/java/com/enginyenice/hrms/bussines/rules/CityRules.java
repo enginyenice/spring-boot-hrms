@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 public class CityRules {
 
     private final CityRepository cityRepository;
-    @Autowired
     public CityRules(CityRepository cityRepository) {
         this.cityRepository = cityRepository;
     }

@@ -21,7 +21,6 @@ public class JobAdvertisementManager implements JobAdvertisementService {
     private final JobAdvertisementRepository jobAdvertisementRepository;
     private ModelMapper modelMapper;
 
-    @Autowired
     public JobAdvertisementManager(JobAdvertisementRepository jobAdvertisementRepository, ModelMapper modelMapper) {
         this.jobAdvertisementRepository = jobAdvertisementRepository;
         this.modelMapper = modelMapper;

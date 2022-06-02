@@ -23,7 +23,6 @@ public class CityManager implements CityService {
     private final CityRepository cityRepository;
     private ModelMapper modelMapper;
 
-    @Autowired
     public CityManager(CityRules cityRules, CityRepository cityRepository, ModelMapper modelMapper) {
         this.cityRules = cityRules;
         this.cityRepository = cityRepository;

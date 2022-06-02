@@ -32,8 +32,6 @@ public class CandidateManager implements CandidateService {
     private final UserRules userRules;
     private final CandidateRules candidateRules;
 
-
-    @Autowired
     public CandidateManager(
             CandidateRepository candidateRepository,
             UserRules userRules,

@@ -12,8 +12,7 @@ import com.enginyenice.hrms.entities.dtos.emailActivations.EmailActivationDto;
 @Component
 public class ActivationRules {
 	private final ActivationRepository activationRepository;
-	
-	@Autowired
+
 	public ActivationRules(ActivationRepository activationRepository) {
 		super();
 		this.activationRepository = activationRepository;

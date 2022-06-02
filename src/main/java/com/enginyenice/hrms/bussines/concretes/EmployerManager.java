@@ -25,7 +25,7 @@ public class EmployerManager implements EmployerService {
 	private ModelMapper modelMapper;
 	private final UserRules userRules;
 	private final EmployerRules employerRules;
-	@Autowired
+
 	public EmployerManager(	EmployerRepository employerRepository, 
 							UserService userService, 
 							ModelMapper modelMapper,

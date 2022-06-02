@@ -12,7 +12,7 @@ import javax.validation.Valid;
 @RequestMapping("/api/job-advertisement/")
 public class JobAdvertisementController {
     private final JobAdvertisementService jobAdvertisementService;
-    @Autowired
+
     public JobAdvertisementController(JobAdvertisementService jobAdvertisementService) {
         this.jobAdvertisementService = jobAdvertisementService;
     }

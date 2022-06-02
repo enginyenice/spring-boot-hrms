@@ -20,8 +20,7 @@ public class ActivationManager  implements ActivationService {
 	
 	private final EmailService emailService;
 	private final ActivationRepository activationRepository;
-	
-	@Autowired
+
 	public ActivationManager(
 			ActivationRepository activationRepository,		
 			@Qualifier("smtpEmailService") EmailService emailService

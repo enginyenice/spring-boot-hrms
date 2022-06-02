@@ -22,8 +22,7 @@ public class UserManager implements UserService {
 	private final UserRepository userRepository;
 	private final ActivationService activationService;
 	private final ActivationRules activationRules;
-	
-	@Autowired
+
 	public UserManager(UserRepository userRepository,ModelMapper modelMapper,ActivationService activationService,ActivationRules activationRules) {
 		super();
 		this.userRepository = userRepository;
