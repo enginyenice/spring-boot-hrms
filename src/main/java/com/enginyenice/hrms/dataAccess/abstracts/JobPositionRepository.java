@@ -8,4 +8,5 @@ import com.enginyenice.hrms.entities.concretes.JobPosition;
 
 @Repository
 public interface JobPositionRepository extends JpaRepository<JobPosition, Integer> {
+    JobPosition findByName(String name);
 }

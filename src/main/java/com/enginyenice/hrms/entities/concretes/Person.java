@@ -22,7 +22,7 @@ public class Person {
 
     @Id
     @Column(name = "user_id")
-    private Long id;
+    private int id;
 	
 	
     @OneToOne

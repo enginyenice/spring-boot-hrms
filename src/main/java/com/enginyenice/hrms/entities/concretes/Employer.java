@@ -21,7 +21,7 @@ public class Employer {
 
     @Id
     @Column(name = "user_id")
-    private Long id;
+    private int id;
 	
 	
     @OneToOne

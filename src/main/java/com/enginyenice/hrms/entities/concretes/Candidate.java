@@ -21,7 +21,7 @@ public class Candidate {
 
     @Id
     @Column(name = "user_id")
-    private Long id;
+    private int id;
 	
 	
     @OneToOne
@@ -34,7 +34,7 @@ public class Candidate {
 	private String firstName;
 	
 	@Column(name="last_name")
-	private String last_name;
+	private String lastName;
 	
 	@Column(name="nationality_number")
 	private String nationalityNumber;
