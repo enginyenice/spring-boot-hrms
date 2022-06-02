@@ -30,6 +30,6 @@ public class JobAdvertisementDto {
     private String description;
     @NotNull
     private int piece;
-    @NotNull
+
     private Date deadline;
 }
