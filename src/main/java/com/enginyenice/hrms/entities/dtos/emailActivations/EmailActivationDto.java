@@ -1,4 +1,4 @@
-package com.enginyenice.hrms.entities.dtos;
+package com.enginyenice.hrms.entities.dtos.emailActivations;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;

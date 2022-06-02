@@ -14,7 +14,7 @@ import com.enginyenice.hrms.core.utilities.results.SuccessResult;
 import com.enginyenice.hrms.core.utilities.rules.BusinessRules;
 import com.enginyenice.hrms.dataAccess.abstracts.UserRepository;
 import com.enginyenice.hrms.entities.concretes.User;
-import com.enginyenice.hrms.entities.dtos.EmailActivationDto;
+import com.enginyenice.hrms.entities.dtos.emailActivations.EmailActivationDto;
 
 @Service
 public class UserManager implements UserService {

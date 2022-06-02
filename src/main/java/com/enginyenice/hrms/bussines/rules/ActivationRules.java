@@ -7,7 +7,7 @@ import com.enginyenice.hrms.core.utilities.results.ErrorResult;
 import com.enginyenice.hrms.core.utilities.results.Result;
 import com.enginyenice.hrms.core.utilities.results.SuccessResult;
 import com.enginyenice.hrms.dataAccess.abstracts.ActivationRepository;
-import com.enginyenice.hrms.entities.dtos.EmailActivationDto;
+import com.enginyenice.hrms.entities.dtos.emailActivations.EmailActivationDto;
 
 @Component
 public class ActivationRules {

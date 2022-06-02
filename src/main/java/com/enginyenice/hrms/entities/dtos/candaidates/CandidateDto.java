@@ -1,7 +1,9 @@
-package com.enginyenice.hrms.entities.dtos;
+package com.enginyenice.hrms.entities.dtos.candaidates;
 
 
 import javax.validation.constraints.NotNull;
+
+import com.enginyenice.hrms.entities.dtos.users.UserDto;
 import org.hibernate.validator.constraints.Length;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

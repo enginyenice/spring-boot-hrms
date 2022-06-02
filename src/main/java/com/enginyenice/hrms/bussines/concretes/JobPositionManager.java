@@ -5,7 +5,8 @@ import com.enginyenice.hrms.bussines.rules.JobPositionRules;
 import com.enginyenice.hrms.core.utilities.results.Result;
 import com.enginyenice.hrms.core.utilities.results.SuccessResult;
 import com.enginyenice.hrms.core.utilities.rules.BusinessRules;
-import com.enginyenice.hrms.entities.dtos.JobPositionDto;
+import com.enginyenice.hrms.entities.dtos.jobPositions.GetAllJobPositionDto;
+import com.enginyenice.hrms.entities.dtos.jobPositions.JobPositionDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,8 +49,8 @@ public class JobPositionManager implements JobPositionService {
 	}
 
 	@Override
-	public DataResult<List<JobPosition>> getAll() {
-		return new SuccessDataResult<List<JobPosition>>(this.jobPositionRepository.findAll());
+	public DataResult<List<GetAllJobPositionDto>> getAll() {
+		return new SuccessDataResult<List<GetAllJobPositionDto>>(this.jobPositionRepository.getAll());
 	}
 
 }

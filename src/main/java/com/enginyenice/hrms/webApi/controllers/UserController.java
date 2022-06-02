@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.enginyenice.hrms.bussines.abstracts.UserService;
-import com.enginyenice.hrms.entities.dtos.EmailActivationDto;
+import com.enginyenice.hrms.entities.dtos.emailActivations.EmailActivationDto;
 
 @RestController
 @RequestMapping("/api/user/")

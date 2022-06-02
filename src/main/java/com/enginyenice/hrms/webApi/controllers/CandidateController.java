@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.enginyenice.hrms.bussines.abstracts.CandidateService;
-import com.enginyenice.hrms.entities.dtos.CandidateDto;
+import com.enginyenice.hrms.entities.dtos.candaidates.CandidateDto;
 
 @RestController
 @RequestMapping("/api/candidate/")

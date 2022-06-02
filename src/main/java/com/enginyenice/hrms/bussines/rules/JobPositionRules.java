@@ -16,7 +16,7 @@ public class JobPositionRules {
     }
 
     public Result isExistPositionName(String positionName){
-        if(this.jobPositionRepository.findByName(positionName) != null)
+        if(this.jobPositionRepository.countByName(positionName) > 0)
         {
             return new ErrorResult("Position name is exist");
         }

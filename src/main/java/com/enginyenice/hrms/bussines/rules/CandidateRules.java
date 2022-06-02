@@ -17,7 +17,7 @@ public class CandidateRules {
 	
 	public Result IsExistNationalityNumber(String nationalityNumber)
 	{
-		if(this.candidateRepository.findByNationalityNumber(nationalityNumber) != null)
+		if(this.candidateRepository.countByNationalityNumber(nationalityNumber) > 0)
 		{
 			return new ErrorResult("Nationality Number is exist");
 		}

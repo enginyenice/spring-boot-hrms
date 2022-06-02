@@ -18,8 +18,8 @@ import com.enginyenice.hrms.core.utilities.rules.BusinessRules;
 import com.enginyenice.hrms.dataAccess.abstracts.CandidateRepository;
 import com.enginyenice.hrms.entities.concretes.Candidate;
 import com.enginyenice.hrms.entities.concretes.User;
-import com.enginyenice.hrms.entities.dtos.CandidateDto;
-import com.enginyenice.hrms.entities.dtos.GetAllCandidateDto;
+import com.enginyenice.hrms.entities.dtos.candaidates.CandidateDto;
+import com.enginyenice.hrms.entities.dtos.candaidates.GetAllCandidateDto;
 
 @Service
 public class CandidateManager implements CandidateService {

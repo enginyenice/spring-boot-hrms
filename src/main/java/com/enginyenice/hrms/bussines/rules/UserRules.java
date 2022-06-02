@@ -17,7 +17,7 @@ public class UserRules {
 	
 	public Result IsExistEmail(String email)
 	{
-		if(this.userRepository.findByEmail(email) != null)
+		if(this.userRepository.countByEmail(email) > 0)
 		{
 			return new ErrorResult("Email is exist");
 		}

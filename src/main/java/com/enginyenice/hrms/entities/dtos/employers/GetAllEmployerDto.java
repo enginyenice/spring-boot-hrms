@@ -1,4 +1,4 @@
-package com.enginyenice.hrms.entities.dtos;
+package com.enginyenice.hrms.entities.dtos.employers;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

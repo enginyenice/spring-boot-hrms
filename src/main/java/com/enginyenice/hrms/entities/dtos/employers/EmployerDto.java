@@ -1,7 +1,8 @@
-package com.enginyenice.hrms.entities.dtos;
+package com.enginyenice.hrms.entities.dtos.employers;
 
 import javax.validation.constraints.NotNull;
 
+import com.enginyenice.hrms.entities.dtos.users.UserDto;
 import org.hibernate.validator.constraints.URL;
 
 import lombok.AllArgsConstructor;
@@ -13,7 +14,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmployerDto extends UserDto{
+public class EmployerDto extends UserDto {
 
 	@NotNull
 	private String companyName;

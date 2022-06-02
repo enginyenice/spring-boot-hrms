@@ -1,4 +1,4 @@
-package com.enginyenice.hrms.entities.dtos;
+package com.enginyenice.hrms.entities.dtos.users;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;

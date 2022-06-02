@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.enginyenice.hrms.bussines.abstracts.EmployerService;
-import com.enginyenice.hrms.entities.dtos.EmployerDto;
+import com.enginyenice.hrms.entities.dtos.employers.EmployerDto;
 
 @RestController
 @RequestMapping("/api/employer/")

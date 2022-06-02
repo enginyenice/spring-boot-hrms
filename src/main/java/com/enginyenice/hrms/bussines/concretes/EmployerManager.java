@@ -1,6 +1,6 @@
 package com.enginyenice.hrms.bussines.concretes;
 import com.enginyenice.hrms.core.utilities.results.*;
-import com.enginyenice.hrms.entities.dtos.GetAllEmployerDto;
+import com.enginyenice.hrms.entities.dtos.employers.GetAllEmployerDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ import com.enginyenice.hrms.core.utilities.rules.BusinessRules;
 import com.enginyenice.hrms.dataAccess.abstracts.EmployerRepository;
 import com.enginyenice.hrms.entities.concretes.Employer;
 import com.enginyenice.hrms.entities.concretes.User;
-import com.enginyenice.hrms.entities.dtos.EmployerDto;
+import com.enginyenice.hrms.entities.dtos.employers.EmployerDto;
 
 import java.util.List;
 
