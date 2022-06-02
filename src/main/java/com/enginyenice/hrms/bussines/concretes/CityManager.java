@@ -32,7 +32,7 @@ public class CityManager implements CityService {
 
     @Override
     public Result create(CityDto cityDto) {
-        var businessRuleResult = BusinessRules.Run(this.cityRules.isExistName(cityDto.getName()));
+        var businessRuleResult = BusinessRules.run(this.cityRules.isExistName(cityDto.getName()));
         if(!businessRuleResult.getSuccess())
         {
             return  businessRuleResult;

@@ -41,7 +41,7 @@ public class EmployerManager implements EmployerService {
 
 	@Override
 	public Result create(EmployerDto employerDto) {		
-		var result = BusinessRules.Run(
+		var result = BusinessRules.run(
 				this.employerRules.DoesEmailAndWebsiteMatch(employerDto.getEmail(), employerDto.getWebSite()),
 				this.userRules.IsExistEmail(employerDto.getEmail())
 				);

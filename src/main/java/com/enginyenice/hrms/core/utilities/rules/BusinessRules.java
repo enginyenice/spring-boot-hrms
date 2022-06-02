@@ -4,7 +4,7 @@ import com.enginyenice.hrms.core.utilities.results.Result;
 import com.enginyenice.hrms.core.utilities.results.SuccessResult;
 
 public class BusinessRules {
-	public static Result Run(Result... locigs) {
+	public static Result run(Result... locigs) {
 		
 		for( Result locig : locigs ) {
 			   if(!locig.getSuccess())

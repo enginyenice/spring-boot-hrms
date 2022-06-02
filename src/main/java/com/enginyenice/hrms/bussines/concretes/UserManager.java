@@ -46,7 +46,7 @@ public class UserManager implements UserService {
 	
 	@Override
 	public Result emailActivator(EmailActivationDto emailVerifyDto) {
-		var result = BusinessRules.Run(this.activationRules.isExistVerify(emailVerifyDto));
+		var result = BusinessRules.run(this.activationRules.isExistVerify(emailVerifyDto));
 		if(!result.getSuccess())
 		{
 			return result;

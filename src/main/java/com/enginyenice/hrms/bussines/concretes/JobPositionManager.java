@@ -35,7 +35,7 @@ public class JobPositionManager implements JobPositionService {
 
 	@Override
 	public Result create(JobPositionDto jobPositionDto) {
-		var businessRuleResult = BusinessRules.Run(this.jobPositionRules.isExistPositionName(jobPositionDto.getName()));
+		var businessRuleResult = BusinessRules.run(this.jobPositionRules.isExistPositionName(jobPositionDto.getName()));
 
 		if(!businessRuleResult.getSuccess())
 		{

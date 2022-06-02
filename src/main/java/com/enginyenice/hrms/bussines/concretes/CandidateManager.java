@@ -55,7 +55,7 @@ public class CandidateManager implements CandidateService {
     @Override
     public Result create(CandidateDto candidateDto) {
 
-        Result res = BusinessRules.Run(
+        Result res = BusinessRules.run(
                 verifyNationalityNumber(candidateDto),
                 this.userRules.IsExistEmail(candidateDto.getEmail()),
                 this.candidateRules.IsExistNationalityNumber(candidateDto.getNationalityNumber()));
