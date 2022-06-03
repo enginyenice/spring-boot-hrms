@@ -38,6 +38,7 @@ public class CityManager implements CityService {
         }
 
         City city = this.modelMapper.map(cityDto,City.class);
+        city.setId(0);
         this.cityRepository.save(city);
         return new SuccessResult("City created");
     }

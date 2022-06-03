@@ -31,6 +31,7 @@ public class JobAdvertisementManager implements JobAdvertisementService {
     public Result create(JobAdvertisementDto jobAdvertisementDto) {
         this.modelMapper.getConfiguration().setAmbiguityIgnored(true);
         JobAdvertisement jobAdvertisement = this.modelMapper.map(jobAdvertisementDto,JobAdvertisement.class);
+        jobAdvertisement.setId(0);
         this.jobAdvertisementRepository.save(jobAdvertisement);
         return new SuccessResult();
     }

@@ -1,15 +1,12 @@
 package com.enginyenice.hrms.entities.concretes;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.MapsId;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -41,5 +38,29 @@ public class Candidate {
 	
 	@Column(name="year_of_birth")
 	private int yearOfBirth;
-	
+
+	@Column(name="cover_letter")
+	private String	coverLetter;
+
+	@Column(name = "image_url")
+	private String imageUrl;
+
+	@Column(name="github")
+	private String github;
+
+	@Column(name="linkedin")
+	private String linkedin;
+
+
+	@OneToMany(mappedBy = "candidate")
+	private List<School> schools;
+
+	@OneToMany(mappedBy = "candidate")
+	private List<Experience> experiences;
+
+	@OneToMany(mappedBy = "candidate")
+	private List<Language> languages;
+
+	@OneToMany(mappedBy = "candidate")
+	private List<Talent> talents;
 }

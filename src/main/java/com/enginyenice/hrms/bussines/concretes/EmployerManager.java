@@ -53,6 +53,7 @@ public class EmployerManager implements EmployerService {
 		
 		User user = modelMapper.map(employerDto, User.class);
 		user.setEmployer(null);
+		user.setId(0);
 		user.setHrmsVerification(false);
 		user.setEmailVerification(false);
 		

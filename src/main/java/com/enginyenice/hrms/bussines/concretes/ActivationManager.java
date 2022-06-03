@@ -33,6 +33,7 @@ public class ActivationManager  implements ActivationService {
 	@Override
 	public Result create(User user) {
 		Activation activation = Activation.builder().code(UUID.randomUUID().toString()).user(user).build();
+		activation.setId(0);
 		this.activationRepository.save(activation);
 		this.emailService.sendEmail(user.getEmail(), "Activation Mail", "Activation Code => " +  activation.getCode() + "\n User Id" + activation.getId());
 		

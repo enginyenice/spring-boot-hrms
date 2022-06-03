@@ -5,6 +5,8 @@ import java.util.List;
 
 import com.enginyenice.hrms.bussines.abstracts.CandidateService;
 import com.enginyenice.hrms.core.utilities.results.*;
+import com.enginyenice.hrms.entities.dtos.candaidates.CandidateCoverLetterDto;
+import com.enginyenice.hrms.entities.dtos.candaidates.CandidateSocialMediaDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -80,6 +82,23 @@ public class CandidateManager implements CandidateService {
 
 
 
+        return new SuccessResult();
+    }
+
+    @Override
+    public Result updateSocialMedia(CandidateSocialMediaDto candidateSocialMediaDto) {
+        Candidate candidate = this.candidateRepository.findById(candidateSocialMediaDto.getId()).get();
+        candidate.setGithub(candidateSocialMediaDto.getGithub());
+        candidate.setLinkedin(candidateSocialMediaDto.getLinkedin());
+        this.candidateRepository.save(candidate);
+        return new SuccessResult();
+    }
+
+    @Override
+    public Result updateCoverLetter(CandidateCoverLetterDto candidateCoverLetterDto) {
+        Candidate candidate = this.candidateRepository.findById(candidateCoverLetterDto.getId()).get();
+        candidate.setCoverLetter(candidateCoverLetterDto.getCoverLetter());
+        this.candidateRepository.save(candidate);
         return new SuccessResult();
     }
 

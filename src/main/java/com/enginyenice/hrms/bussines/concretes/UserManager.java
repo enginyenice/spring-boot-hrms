@@ -32,6 +32,7 @@ public class UserManager implements UserService {
 
 	@Override
 	public DataResult<User> create(User user) {
+		user.setId(0);
 		userRepository.save(user);
 		
 		if(user.isEmailVerification() == false)

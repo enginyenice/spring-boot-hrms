@@ -43,7 +43,7 @@ public class JobPositionManager implements JobPositionService {
 		}
 
 		JobPosition jobPosition = this.modelMapper.map(jobPositionDto, JobPosition.class);
-		System.out.println(jobPosition);
+		jobPosition.setId(0);
 		this.jobPositionRepository.save(jobPosition);
 		return new SuccessResult("Add Job Position");
 	}
