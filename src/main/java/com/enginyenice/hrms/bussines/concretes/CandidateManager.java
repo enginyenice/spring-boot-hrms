@@ -4,9 +4,10 @@ package com.enginyenice.hrms.bussines.concretes;
 import java.util.List;
 
 import com.enginyenice.hrms.bussines.abstracts.CandidateService;
+import com.enginyenice.hrms.core.utilities.fileOperations.FileUpload;
 import com.enginyenice.hrms.core.utilities.results.*;
-import com.enginyenice.hrms.entities.dtos.candaidates.CandidateCoverLetterDto;
-import com.enginyenice.hrms.entities.dtos.candaidates.CandidateSocialMediaDto;
+import com.enginyenice.hrms.entities.dtos.candaidates.*;
+import com.enginyenice.hrms.entities.dtos.resumes.ResumeDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -20,8 +21,6 @@ import com.enginyenice.hrms.core.utilities.rules.BusinessRules;
 import com.enginyenice.hrms.dataAccess.abstracts.CandidateRepository;
 import com.enginyenice.hrms.entities.concretes.Candidate;
 import com.enginyenice.hrms.entities.concretes.User;
-import com.enginyenice.hrms.entities.dtos.candaidates.CandidateDto;
-import com.enginyenice.hrms.entities.dtos.candaidates.GetAllCandidateDto;
 
 @Service
 public class CandidateManager implements CandidateService {
@@ -33,11 +32,13 @@ public class CandidateManager implements CandidateService {
     private ModelMapper modelMapper;
     private final UserRules userRules;
     private final CandidateRules candidateRules;
+    private final FileUpload fileUpload;
 
     public CandidateManager(
             CandidateRepository candidateRepository,
             UserRules userRules,
             @Qualifier("fakeService") NationalityAuthanticationService nationalityAuthanticationService,
+            @Qualifier("cloudinary") FileUpload fileUpload,
             UserService userService,
             CandidateRules candidateRules,
             ModelMapper modelMapper)
@@ -48,6 +49,7 @@ public class CandidateManager implements CandidateService {
         this.userRules = userRules;
         this.candidateRules = candidateRules;
         this.modelMapper = modelMapper;
+        this.fileUpload= fileUpload;
     }
 
 
@@ -103,11 +105,26 @@ public class CandidateManager implements CandidateService {
     }
 
     @Override
+    public Result uploadImage(CandidateUploadImageDto candidateUploadImageDto) {
+        Candidate candidate = this.candidateRepository.findById(candidateUploadImageDto.getId()).get();
+        String imageUrl = this.fileUpload.upload(candidateUploadImageDto.getImageUrl());
+        candidate.setImageUrl(imageUrl);
+        this.candidateRepository.save(candidate);
+        return new SuccessResult();
+    }
+
+    @Override
     public DataResult<List<GetAllCandidateDto>> getAll() {
 		var result = this.candidateRepository.getAll();
 		return new SuccessDataResult<List<GetAllCandidateDto>>(result);
     }
 
+    @Override
+    public DataResult<ResumeDto> getResumeByCandidateId(int candidateId) {
+        Candidate candidate = this.candidateRepository.findById(candidateId).get();
+        ResumeDto resume = this.modelMapper.map(candidate,ResumeDto.class);
+        return new SuccessDataResult<>(resume);
+    }
 
 
     private Result verifyNationalityNumber(CandidateDto candidateDto)

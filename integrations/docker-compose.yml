@@ -1,0 +1,52 @@
+version: "3.8"
+services:
+# ---------------  PostgreSQL ---------------
+  db:
+    image: postgres:alpine3.15
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Password12*
+      POSTGRES_DB: hrms
+    volumes:
+      - postgre_volume:/var/lib/postgresql/data
+
+  # ---------------  PGADMIN ---------------
+  pgAdmin:
+      image: dpage/pgadmin4:6.9
+      ports:
+        - 8081:80
+      environment:
+        PGADMIN_DEFAULT_EMAIL: admin@enginyenice.com
+        PGADMIN_DEFAULT_PASSWORD: Password12*
+
+# ---------------  APPLICATON ---------------
+  java-application:
+    container_name: hrms
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    expose:
+      - 8080
+    ports:
+      - 80:8080
+    environment:
+      DATABASE_URL: "jdbc:postgresql://db/hrms"
+      DATABASE_USERNAME: "postgres"
+      DATABASE_PASSWORD: "Password12*"
+      MAIL_HOST: "mail.enginyenice.net"
+      MAIL_USER: "test@enginyenice.net"
+      MAIL_PASSWORD: "~K997qnb0"
+      MAIL_PORT: "587"
+      CLOUDINARY_CLOUD_NAME: "dvdvftzlr"
+      CLOUDINARY_API: "329871372649585"
+      CLOUDINARY_API_SECRET: "-Us3PJ2PGaHQECRPEWwUnprM1gA"
+networks:
+  hrms:
+    name: hrms-network
+    driver: hrms-driver
+
+volumes:
+  postgre_volume:

@@ -1,5 +1,6 @@
 version: "3.8"
 services:
+  # ---------------  PostgreSQL ---------------
   db:
     image: postgres:alpine3.15
     restart: always
@@ -11,16 +12,15 @@ services:
       POSTGRES_DB: hrms
     volumes:
       - postgre_volume:/var/lib/postgresql/data
+
+  # ---------------  PGADMIN ---------------
   pgAdmin:
-      image: dpage/pgadmin4:6.9
-      ports:
-        - 8081:80
-      environment:
-        PGADMIN_DEFAULT_EMAIL: admin@enginyenice.com
-        PGADMIN_DEFAULT_PASSWORD: Password12*
-
-
-
+    image: dpage/pgadmin4:6.9
+    ports:
+      - 8081:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@enginyenice.com
+      PGADMIN_DEFAULT_PASSWORD: Password12*
 
 volumes:
   postgre_volume:
