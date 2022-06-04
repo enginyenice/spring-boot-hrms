@@ -7,24 +7,7 @@
 
 
 ---
-## Before Running the Project
-
-### Step 1
-Go to Address:
-`src/resources/example.application.properties`
-
-Rename File: 
-
-Before:
-`example.application.properties`
-
-After:
-`application.properties`
-
-
-Fill in the blank values.
-
-### Step 2
+## Run
 
 1. Start Docker and new open terminal.
 2. Go to the home directory where the project is located.
